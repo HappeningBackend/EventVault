@@ -28,7 +28,7 @@ namespace EventVault
 
             var azureConnectionString = Environment.GetEnvironmentVariable("AzureConnection");
 
-            // Add services to the container.
+            // Add services to the container.s
             builder.Services.AddDbContext<EventVaultDbContext>(options =>
                 options.UseSqlServer(azureConnectionString));
 
