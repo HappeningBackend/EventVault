@@ -1,14 +1,11 @@
-name: Build and deploy .NET Core application to Web App HappeningAPIResource
+name: Build and deploy .NET Core application to Web App EventVault20241126155855
 on:
   push:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: HappeningAPIResource
+  AZURE_WEBAPP_NAME: EventVault20241126155855
   AZURE_WEBAPP_PACKAGE_PATH: .\publish
-  AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-  AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-  AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x
   WORKING_DIRECTORY: .
@@ -46,7 +43,7 @@ jobs:
     - name: Azure Login
       uses: azure/login@v2
       with:
-        creds: ${{ secrets.HappeningAPIResource_SPN }}
+        creds: ${{ secrets.EventVault20241126155855_SPN }}
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
